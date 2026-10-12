@@ -17,7 +17,7 @@
 <main>
   <p><a href="index.html">&larr; WhyStory</a></p>
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: October 12, 2026</p>
+  <p class="muted">Last updated: October 12, 2026 (added channel analytics)</p>
 
   <p>This policy covers the WhyStory uploader ("the app"), a private tool that uploads videos to the
   WhyStory YouTube channel (<a href="https://www.youtube.com/@WhyStoryDaily">@WhyStoryDaily</a>)
@@ -35,11 +35,15 @@
   <h2>What data the app accesses</h2>
   <ul>
     <li><strong>Google sign-in authorization.</strong> When the channel owner signs in with Google, the app
-    receives an OAuth token with two permissions: <em>upload videos</em> (youtube.upload) and
-    <em>view the channel's basic details</em> (youtube.readonly), used only to confirm which channel it
-    is connected to.</li>
+    receives an OAuth token with three permissions: <em>upload videos</em> (youtube.upload),
+    <em>view the channel's details and video list</em> (youtube.readonly), and
+    <em>view YouTube Analytics reports</em> for the channel (yt-analytics.readonly).</li>
     <li><strong>Upload results.</strong> After each upload, YouTube returns the new video's ID and privacy
     status, which the app records in a local log so it doesn't upload the same video twice.</li>
+    <li><strong>Channel statistics.</strong> Once a day the app reads the WhyStory channel's own aggregate
+    statistics (views, watch time, average percentage viewed, likes, shares, comment counts and subscriber
+    changes, overall and per video) to produce a private performance report for the channel owner. These are
+    aggregate numbers only and contain no information about individual viewers.</li>
   </ul>
   <p>The app does not access, collect or store data about viewers, subscribers, comments, other channels or
   any other YouTube users.</p>
@@ -48,7 +52,9 @@
   <ul>
     <li>The OAuth token is stored only on the channel owner's computer and is used only to upload the
     channel's own videos and to confirm the connected channel.</li>
-    <li>The upload log (video IDs, titles, dates) is stored only on the channel owner's computer.</li>
+    <li>The upload log (video IDs, titles, dates) and the daily performance reports are stored only on the
+    channel owner's computer. Statistics retrieved from YouTube API Services are refreshed daily, and stored
+    copies older than 30 days are refreshed or deleted.</li>
     <li>No data is sold, shared with third parties, used for advertising, or sent to any server other than
     Google's own APIs.</li>
   </ul>
